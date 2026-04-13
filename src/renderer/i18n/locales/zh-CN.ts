@@ -1,0 +1,78 @@
+const zhCN = {
+  app: {
+    title: 'MilkySea',
+    subtitle: 'Markdown IDE with Mermaid Interactive Layer',
+  },
+  actions: {
+    openWorkspace: '打开工作区',
+    openFile: '打开 Markdown',
+    newDocument: '新建文档',
+    exportAst: '导出 AST JSON',
+    exportDiagram: '导出图 JSON',
+    insertDiagram: '插入 Mermaid 图',
+    insertImage: '插入图片',
+    bulletList: '无序列表',
+    orderedList: '有序列表',
+    saveNow: '立即保存',
+    close: '关闭',
+    saveDiagram: '保存图编辑',
+  },
+  empty: {
+    title: '还没有打开工作区',
+    body: '选择一个本地文件夹后，MilkySea 会自动创建工作区结构并加载 Markdown 文档。',
+  },
+  sidebar: {
+    title: '文档',
+    noDocuments: '当前工作区还没有 Markdown 文档。',
+    newDocumentPrompt: '请输入新文档路径，例如 notes/plan.md：',
+    draftBadge: '草稿',
+  },
+  editor: {
+    placeholder: '开始书写你的 Markdown 文档…',
+    recoveryPrompt: '检测到未恢复的草稿，是否加载恢复内容？',
+    recoveryApplied: '已加载恢复草稿。',
+    loading: '编辑器正在加载…',
+  },
+  preview: {
+    title: 'Mermaid 预览',
+    empty: '当前文档还没有 Mermaid block。',
+    openHint: '双击卡片可打开图编辑器',
+    openButton: '打开图编辑器',
+    renderError: 'Mermaid 渲染失败',
+    loading: '正在加载预览组件…',
+  },
+  diagram: {
+    title: '图编辑器',
+    direction: '布局方向',
+    directionTD: '上下',
+    directionLR: '左右',
+    intro: '使用 tldraw 调整节点和箭头，保存后会回写 Mermaid 文本。',
+    loading: '正在加载图编辑器…',
+  },
+  status: {
+    ready: '准备就绪',
+    workspaceOpened: '工作区已打开',
+    workspaceResolved: '已根据拖入内容定位工作区',
+    loadingDocument: '正在加载文档…',
+    documentLoaded: '文档已加载',
+    saving: '正在自动保存…',
+    saved: '文档已保存',
+    saveFailed: '保存失败',
+    exportSuccess: '导出完成',
+    exportSkipped: '已取消导出',
+    diagramSaved: 'Mermaid 图已更新',
+    noDiagram: '当前文档没有可导出的 Mermaid 图',
+    workspaceFailed: '打开工作区失败',
+    dropToOpen: '拖入 Markdown 文件或工作区文件夹以打开',
+  },
+  dropzone: {
+    title: '拖入即可打开',
+    body: '支持拖入 Markdown 文件，MilkySea 会自动定位到它所在的文件夹。',
+  },
+  errors: {
+    renderCrashedTitle: '界面加载失败',
+    renderCrashedBody: '渲染进程遇到了错误。请把下面的错误信息发给接手的 AI，或重启应用后继续排查。',
+  },
+} as const;
+
+export default zhCN;

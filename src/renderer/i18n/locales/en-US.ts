@@ -1,0 +1,78 @@
+const enUS = {
+  app: {
+    title: 'MilkySea',
+    subtitle: 'Markdown IDE with Mermaid Interactive Layer',
+  },
+  actions: {
+    openWorkspace: 'Open Workspace',
+    openFile: 'Open Markdown',
+    newDocument: 'New Document',
+    exportAst: 'Export AST JSON',
+    exportDiagram: 'Export Diagram JSON',
+    insertDiagram: 'Insert Mermaid Diagram',
+    insertImage: 'Insert Image',
+    bulletList: 'Bullet List',
+    orderedList: 'Ordered List',
+    saveNow: 'Save Now',
+    close: 'Close',
+    saveDiagram: 'Save Diagram',
+  },
+  empty: {
+    title: 'No workspace is open yet',
+    body: 'Choose a local folder and MilkySea will create the workspace structure and load Markdown documents.',
+  },
+  sidebar: {
+    title: 'Documents',
+    noDocuments: 'No Markdown documents were found in this workspace.',
+    newDocumentPrompt: 'Enter a new document path, for example notes/plan.md:',
+    draftBadge: 'Draft',
+  },
+  editor: {
+    placeholder: 'Start writing your Markdown document…',
+    recoveryPrompt: 'A recovery draft was found. Load the recovered content?',
+    recoveryApplied: 'Recovery draft loaded.',
+    loading: 'Loading editor…',
+  },
+  preview: {
+    title: 'Mermaid Preview',
+    empty: 'This document does not contain Mermaid blocks yet.',
+    openHint: 'Double-click a card to open the diagram editor',
+    openButton: 'Open Diagram Editor',
+    renderError: 'Failed to render Mermaid diagram',
+    loading: 'Loading preview component…',
+  },
+  diagram: {
+    title: 'Diagram Editor',
+    direction: 'Layout direction',
+    directionTD: 'Top to bottom',
+    directionLR: 'Left to right',
+    intro: 'Use tldraw to adjust nodes and arrows. Saving writes Mermaid text back into Markdown.',
+    loading: 'Loading diagram editor…',
+  },
+  status: {
+    ready: 'Ready',
+    workspaceOpened: 'Workspace opened',
+    workspaceResolved: 'Workspace resolved from dropped content',
+    loadingDocument: 'Loading document…',
+    documentLoaded: 'Document loaded',
+    saving: 'Auto-saving…',
+    saved: 'Document saved',
+    saveFailed: 'Failed to save document',
+    exportSuccess: 'Export completed',
+    exportSkipped: 'Export cancelled',
+    diagramSaved: 'Mermaid diagram updated',
+    noDiagram: 'There is no Mermaid diagram to export',
+    workspaceFailed: 'Failed to open workspace',
+    dropToOpen: 'Drop a Markdown file or workspace folder to open it',
+  },
+  dropzone: {
+    title: 'Drop to open',
+    body: 'Markdown files are supported. MilkySea will locate the containing folder automatically.',
+  },
+  errors: {
+    renderCrashedTitle: 'The interface failed to load',
+    renderCrashedBody: 'The renderer process hit an error. Please share the message below with the next AI or restart the app and continue debugging.',
+  },
+} as const;
+
+export default enUS;

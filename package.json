@@ -1,0 +1,89 @@
+{
+  "name": "milkysea",
+  "version": "0.1.0",
+  "description": "Markdown IDE with Mermaid Interactive Layer",
+  "main": "dist-electron/src/main/index.js",
+  "license": "MIT",
+  "author": "Codex",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "dist": "npm run build && electron-builder",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.web.json && tsc --noEmit -p tsconfig.node.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "e2e": "playwright test",
+    "security:deps": "npm audit --audit-level=high",
+    "security:secrets": "node scripts/security-secrets.mjs",
+    "security": "npm run security:deps && npm run security:secrets",
+    "ci": "npm run typecheck && npm run test && npm run security"
+  },
+  "build": {
+    "appId": "com.milkysea.app",
+    "productName": "MilkySea",
+    "directories": {
+      "output": "release"
+    },
+    "asar": true,
+    "files": [
+      "dist/**",
+      "dist-electron/**",
+      "package.json"
+    ],
+    "win": {
+      "signAndEditExecutable": false,
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    }
+  },
+  "dependencies": {
+    "@milkdown/crepe": "^7.20.0",
+    "@milkdown/kit": "^7.20.0",
+    "@milkdown/react": "^7.20.0",
+    "dagre": "^0.8.5",
+    "i18next": "^26.0.4",
+    "mermaid": "^11.14.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-i18next": "^17.0.2",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "tldraw": "^4.5.8",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.1.0",
+    "zod": "^4.3.6",
+    "zustand": "^5.0.12"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/dagre": "^0.7.54",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "electron": "^41.2.0",
+    "electron-builder": "^26.8.1",
+    "jsdom": "^29.0.2",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.8",
+    "vite-plugin-electron": "^0.29.1",
+    "vite-plugin-electron-renderer": "^0.14.6",
+    "vitest": "^4.1.4"
+  }
+}
