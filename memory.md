@@ -147,6 +147,14 @@
 - 未解决问题：仍需用户实际验证目录选择器在本机是否能正常返回路径，以及拖入 `.md` 文件是否会自动打开对应工作区和文档
 - 下一步建议：优先测试 `release-dropfix/win-unpacked/MilkySea.exe`；如果仍失败，请回传底部状态栏文字或新错误信息
 
+## 2026-04-13 00:00 Asia/Shanghai | 执行者：Codex | 步骤：M8
+
+- 摘要：移除前端隐藏文件输入的工作区选择方案，改为 Electron 原生“打开工作区文件夹”与“打开 Markdown 文件”两条入口；拖拽 `.md` 或文件夹时统一走主进程路径解析，并同步更新启动/重启脚本备注。
+- 涉及文件：`src/shared/types/document.ts`、`src/shared/types/ipc.ts`、`src/shared/schemas/ipc.ts`、`src/preload/index.ts`、`src/main/ipc/register-ipc.ts`、`src/main/services/workspace-service.ts`、`src/renderer/App.tsx`、`src/renderer/i18n/locales/zh-CN.ts`、`src/renderer/i18n/locales/en-US.ts`、`scripts/dev.ps1`、`scripts/restart.ps1`、`release-nativepick/*`
+- 验证：`npm run typecheck`、`npm run build` 通过；`npx electron-builder --config.directories.output=release-nativepick` 成功；`release-nativepick/` 已产出新的安装包与 `win-unpacked/`
+- 未解决问题：仍需用户在本机验证原生文件夹选择、原生 Markdown 文件选择、拖拽 `.md` 打开三条路径是否全部恢复正常
+- 下一步建议：优先测试 `release-nativepick/win-unpacked/MilkySea.exe`；若仍有问题，请回传按钮点击后的状态栏文字或任何弹窗/无响应现象
+
 ## 2026-04-11 12:45 Asia/Shanghai | 执行者：Codex | 步骤：M8
 
 - 摘要：完成 Windows MVP 主体实现并进入发布验证；首次 `npm run dist` 因 `winCodeSign` 解压权限失败。
